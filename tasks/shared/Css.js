@@ -1,6 +1,5 @@
-var gulp    = require('gulp');
-var cssGlob = require('gulp-css-globbing');
-var Elixir  = require('../../index');
+var gulp   = require('gulp');
+var Elixir = require('../../index');
 
 var $ = Elixir.Plugins;
 var config = Elixir.config;
@@ -14,7 +13,7 @@ module.exports = function(options) {
     return (
         gulp
         .src(options.src.path)
-        .pipe(cssGlob({ extensions: ['.css', '.scss', '.sass'] }))
+        .pipe($.cssGlobbing(config.css.globbing))
         .pipe($.if(config.sourcemaps, $.sourcemaps.init()))
         .pipe(options.compiler(options.pluginOptions))
         .on('error', function(e) {

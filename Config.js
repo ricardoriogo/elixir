@@ -183,6 +183,21 @@ var config = {
 
         /*
          |----------------------------------------------------------------
+         | Sass/CSS Globbing
+         |----------------------------------------------------------------
+         |
+         | When working with so many Sass or CSS files you can use wildcards 
+         | to import them. Adding @import 'partials/*' you will import 
+         | all Sass/CSS files in partials folder.
+         |
+         */
+        globbing: {
+            // https://github.com/jsahlen/gulp-css-globbing
+            extensions: ['.css', '.scss', '.sass']
+        },
+
+        /*
+         |----------------------------------------------------------------
          | Sass Compilation
          |----------------------------------------------------------------
          |
